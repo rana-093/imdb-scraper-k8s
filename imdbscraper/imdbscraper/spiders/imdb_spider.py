@@ -4,11 +4,6 @@ class IMDBSpider(scrapy.Spider):
   name = 'imdb_spider'
   start_urls = ['https://www.imdb.com/chart/top/']
 
-  custom_settings = {
-    'CONCURRENT_REQUESTS': 5,  # Adjust the number of concurrent requests as needed
-    'CONCURRENT_REQUESTS_PER_DOMAIN': 2  # Adjust the number of concurrent requests per domain
-  }
-
   def parse(self, response):
     top_50_movie_details = response.xpath('//li[contains(@class, "ipc-metadata-list-summary-item")]')[:50]
     print(f'Number of movie items: {len(top_50_movie_details)}')
