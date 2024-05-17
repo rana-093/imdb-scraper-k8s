@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: imdb-scraper-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: imdb-scraper
+  template:
+    metadata:
+      labels:
+        app: imdb-scraper
+    spec:
+      containers:
+      - name: imdb-scraper
+        image: rana093/scraper:latest
+        ports:
+        - containerPort: 6380

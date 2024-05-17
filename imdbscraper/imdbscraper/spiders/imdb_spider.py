@@ -1,5 +1,6 @@
 import scrapy
 
+
 class IMDBSpider(scrapy.Spider):
   name = 'imdb_spider'
   start_urls = ['https://www.imdb.com/chart/top/']
@@ -15,10 +16,10 @@ class IMDBSpider(scrapy.Spider):
     movie_name = response.css('span.hero__primary-text::text').get()
     release_date = response.css('a.ipc-link[href*="releaseinfo"]::text').get()
     director_name = response.css(
-      'span.ipc-metadata-list-item__label[aria-label="See full cast and crew"] + div ul a::text')\
+      'span.ipc-metadata-list-item__label[aria-label="See full cast and crew"] + div ul a::text') \
       .extract_first()
     casts = response.css(
-      'a.ipc-metadata-list-item__label[aria-label="See full cast and crew"] + div ul a::text')\
+      'a.ipc-metadata-list-item__label[aria-label="See full cast and crew"] + div ul a::text') \
       .extract()
     casts = list(set([actor.strip() for actor in casts]))
     yield {
