@@ -16,4 +16,4 @@ spec:
       - name: imdb-scraper
         image: rana093/scraper:latest
         ports:
-        - containerPort: 6380
+        - containerPort: 6023
