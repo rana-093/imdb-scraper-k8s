@@ -1,6 +1,6 @@
-imdb_spider crawls the top 50 movies from IMDB
+## imdb_spider crawls the top 50 movies from IMDB
 
-First clone this repo: https://github.com/rana-093/imdb-scraper-k8s
+First clone this repo: **https://github.com/rana-093/imdb-scraper-k8s**
 
 To run in docker run:
 - `docker build -f imdb-spider .`
@@ -23,5 +23,6 @@ Now give the following command:
 - `kubectl get all`
 
 You will find the necessary resources here!
-But make sure first to configure aws, eksctl also! 
+
+**But make sure first to configure aws, eksctl also!** 
 
